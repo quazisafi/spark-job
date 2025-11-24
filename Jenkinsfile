@@ -35,13 +35,13 @@ pipeline {
     	success {
             script {
                 // Notify success to Slack
-                slackSend channel: '#all-safacom', color: 'good', message: "Build SUCCESSFUL: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"
+                slackSend channel: '#new-channel', color: 'good', message: "Build SUCCESSFUL: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"
             }
         }
         failure {
             script {
                 // Notify failure to Slack
-                slackSend channel: '#all-safacom', color: 'danger', message: "Build FAILED: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"
+                slackSend channel: '#new-channel', color: 'danger', message: "Build FAILED: ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})"
             }
         }
         always {
@@ -52,7 +52,3 @@ pipeline {
         }
     }
 }
-
-
-
-  
